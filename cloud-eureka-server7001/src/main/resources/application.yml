@@ -1,0 +1,20 @@
+server:
+  #注册中心服务器端口号
+  port: 7001
+
+eureka:
+  instance:
+    #注册中心服务器IP
+    hostname: localhost
+
+  client:
+    #如果只有一个Eureka时不需要注册自己，当为集群时，需要将一个注册中心往另一个注册中心上注册
+    #（为了集群间的数据同步）
+    register-with-eureka: false
+    #注册中心本身不需要抓去取注册信息的，集群时需要为true
+    fetchRegistry: false
+    #注册中心的服务网址，集群时：多个注册中心用逗号隔开
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+      #用表达式也可以这么写，写活
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
