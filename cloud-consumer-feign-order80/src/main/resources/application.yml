@@ -10,3 +10,16 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:7001/eureka
+#设置Feign客户端超时时间（openfeign默认支持ribbon）
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+  #ReadTimeout:  5000    #测试程序那边会睡3秒,这里设置为5秒内建立连接,所以不会超时
+  ReadTimeout:  1000     #获取连接时间修改为1秒,则会超时(主要):java.net.SocketTimeoutException: Read timed out
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000  #获取到连接后,读取可用资源一般很快
+
+#日志;等级
+logging:
+  level:
+    com.atguigu.springcloud.service.PaymentFeignService: debug
+
