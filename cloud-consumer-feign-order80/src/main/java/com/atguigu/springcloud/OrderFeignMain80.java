@@ -14,7 +14,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 @EnableEurekaClient     //开启Eureka注册中心组件
 @EnableFeignClients     //OpenFeign基于接口的远程访问组件
 @RibbonClient(name = "CLOUD-PAYMENT-SERVICE",configuration = MyFeignRule.class)     //自定义负载均衡策略
-
 public class OrderFeignMain80 {
     public static void main(String[] args) {
         SpringApplication.run(OrderFeignMain80.class,args);

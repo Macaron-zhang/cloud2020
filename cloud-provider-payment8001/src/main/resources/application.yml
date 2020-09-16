@@ -5,6 +5,14 @@ spring:
   application:
     #这个名字是唯一的，且不能随便改动
     name: cloud-payment-service
+
+  zipkin:
+    base-url: http://localhost:9411
+    sleuth:
+      sampler:
+        #采样率值介于0~1之间，1表示全部采样
+        probability: 1
+
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver

@@ -60,10 +60,31 @@ public class PaymentController {
         }
     }
     //超时设置
+//    @GetMapping(value = "/payment/feign/timeout")
+//    public String paymentFeignTimeout(){
+//        try { TimeUnit.SECONDS.sleep(3); }catch (Exception e) {e.printStackTrace();} //单位秒
+//        return port;
+//    }
+
+    //测试网关
     @GetMapping(value = "/payment/feign/timeout")
     public String paymentFeignTimeout(){
-        try { TimeUnit.SECONDS.sleep(3); }catch (Exception e) {e.printStackTrace();} //单位秒
+        //try { TimeUnit.SECONDS.sleep(1); }catch (Exception e) {e.printStackTrace();} //单位秒
         return port;
     }
+
+    //测试自定义过滤器
+    @GetMapping(value = "/payment/username/me")
+    public String paymentFeignTimeout(String username){
+        return username;
+    }
+
+    //链路追踪
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin(){
+        return "hi ,i'am paymentzipkin server，welcome to atguigu，O(∩_∩)O哈哈~";
+    }
+
+
 
 }

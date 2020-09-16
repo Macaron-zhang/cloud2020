@@ -7,3 +7,9 @@
 /cloud-consumer-hystrix-dashboard9001/target/
 /cloud-provider-hystrix-payment8001/target/
 /cloud-provider-payment8001/target/
+/cloud-gateway-gateway9527/target/
+
+/cloudalibaba-config-nacos-client3377/target/
+/cloudalibaba-consumer-nacos-order83/target/
+/cloudalibaba-provider-payment9001/target/
+/cloudalibaba-sentinel-service8401/target/
